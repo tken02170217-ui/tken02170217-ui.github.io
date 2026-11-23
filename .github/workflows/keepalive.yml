@@ -1,0 +1,30 @@
+name: supabase-keepalive
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase database (several read requests)
+        env:
+          SUPABASE_URL: https://wxszfnmqvsatedjjgivb.supabase.co
+          SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4c3pmbm1xdnNhdGVkampnaXZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU0MjE4MTQsImV4cCI6MjExMDk5NzgxNH0.nkLq2OTLOxuktM2yIanjIFA5AMalRzQej9R3Bt0wQSk
+        run: |
+          set -e
+          for i in 1 2 3; do
+            curl -sf "$SUPABASE_URL/rest/v1/voices?select=id,ward,theme&limit=5" \
+              -H "apikey: $SUPABASE_ANON_KEY" \
+              -H "Authorization: Bearer $SUPABASE_ANON_KEY" > /dev/null
+            echo "voices select $i ok"
+            sleep 20
+            curl -sf "$SUPABASE_URL/rest/v1/voices?select=ward&order=created_at.desc&limit=5" \
+              -H "apikey: $SUPABASE_ANON_KEY" \
+              -H "Authorization: Bearer $SUPABASE_ANON_KEY" > /dev/null
+            echo "voices recent $i ok"
+            sleep 20
+          done
+          echo "keepalive done"
