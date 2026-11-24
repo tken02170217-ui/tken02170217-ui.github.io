@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>23区・リアルボイスつなぎ</title>
+<title>トーキョーミライボイス</title>
 <meta name="description" content="東京23区から、希望の声を集めよう同世代のリアルな声を投稿・共有できるアプリです">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
@@ -137,7 +137,7 @@ footer{text-align:center; color:var(--muted); font-size:12px; margin-top:34px;}
 <span class="sparkle" style="left:8%; top:22px;">✨</span>
 <span class="sparkle" style="right:10%; top:52px; animation-delay:.7s;">🌈</span>
 <span class="sparkle" style="left:16%; bottom:0; animation-delay:1.3s;">☀️</span>
-<span class="badge">東京23区リアルボイスつなぎ</span>
+<span class="badge">トーキョーミライボイス</span>
 <h1>東京23区から<br><span class="grad">希望の声</span>を集めよう</h1>
 <p class="sub">物価、家賃、学費、将来のこと<br>同世代のリアルなひとことを<br>23区でつないでいく場所です</p>
 <div id="cheer">あなたのひとことが、誰かの一歩になる 🌱</div>
@@ -201,7 +201,7 @@ footer{text-align:center; color:var(--muted); font-size:12px; margin-top:34px;}
 <div class="rowbtns"><button class="subbtn" id="copyBtn">📋 まとめをコピー</button></div>
 </section>
 
-<footer>23区・リアルボイスつなぎ — みんなの声で、東京に光を灯そう</footer>
+<footer>トーキョーミライボイス — みんなの声で、東京に光を灯そう</footer>
 </div>
 <div class="toast" id="toast"></div>
 
@@ -334,7 +334,7 @@ const byTheme = {}; THEMES.forEach(t=>byTheme[t]=0); voices.forEach(v=>{ if(byTh
 const lit = WARDS.slice(0,23).filter(w=>counts[w]>0);
 const dark = WARDS.slice(0,23).filter(w=>counts[w]===0);
 const lines = [
-"",
+"【トーキョーミライボイス まとめ】",
 `集まった声：${voices.length}件 ／ 光が灯った区：${covered}/23区`,
 "",
 "■ テーマ別",
