@@ -7,6 +7,9 @@
 <meta name="description" content="東京23区から、希望の声を集めよう同世代のリアルな声を投稿・共有できるアプリです">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 <style>
 :root{
 --amber:#f59e0b; --amber-deep:#d97706; --sky:#0ea5e9; --ink:#292524;
@@ -27,9 +30,10 @@ header.hero{text-align:center; padding:28px 12px 8px; position:relative;}
 .sparkle{position:absolute; font-size:20px; animation:twinkle 2.4s ease-in-out infinite;}
 @keyframes twinkle{0%,100%{opacity:.25; transform:scale(.8) rotate(0deg);}50%{opacity:1; transform:scale(1.15) rotate(20deg);}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important; transition:none!important;}}
-.badge{display:inline-block; background:#fff; border:1px solid var(--line); color:var(--amber-deep);
-font-weight:700; font-size:12px; letter-spacing:.12em; padding:6px 14px; border-radius:999px; box-shadow:0 4px 14px rgba(245,158,11,.15);}
-h1{font-size:clamp(28px,5.4vw,44px); line-height:1.25; margin:14px 0 8px; font-weight:900;}
+.badge{display:inline-block; background:#fff; border:1px solid var(--line); color:var(--amber-deep); font-family:"Yomogi","Hiragino Maru Gothic ProN",sans-serif;
+       font-weight:700; font-size:17px; letter-spacing:.08em; padding:6px 16px; border-radius:999px; box-shadow:0 4px 14px rgba(245,158,11,.15);}
+  .hand{font-family:"Yomogi","Hiragino Maru Gothic ProN",sans-serif; font-size:17px;}
+h1{font-size:clamp(28px,5.417px,44px); line-height:1.25; margin:14px 0 8px; font-weight:900;}
 h1.grad{background:linear-gradient(90deg,var(--amber-deep),#ea580c,var(--sky)); -webkit-background-clip:text; background-clip:text; color:transparent;}
 .sub{color:var(--muted); font-size:15px;}
 #cheer{margin-top:12px; font-weight:700; color:var(--amber-deep); min-height:24px; transition:opacity.5s;}
@@ -201,7 +205,7 @@ footer{text-align:center; color:var(--muted); font-size:12px; margin-top:34px;}
 <div class="rowbtns"><button class="subbtn" id="copyBtn">📋 まとめをコピー</button></div>
 </section>
 
-<footer>トーキョーミライボイス — みんなの声で、東京に光を灯そう</footer>
+<footer><span class="hand">トーキョーミライボイス</span> — みんなの声で、東京に光を灯そう</footer>
 </div>
 <div class="toast" id="toast"></div>
 
