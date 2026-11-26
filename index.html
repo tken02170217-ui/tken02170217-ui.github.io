@@ -342,9 +342,6 @@ const lines = [
 "",
 "■ テーマ別",
 ...THEMES.map(t=>`・${t}：${byTheme[t]}件`),
-"",
-`■ 声が届いた区（${lit.length}）：${lit.join("、")||"なし"}`,
-`■ まだの区（${dark.length}）：${dark.join("、")||"なし 🎉"}`,
 ];
 $("summary").textContent = lines.join("\n");
 }
